@@ -1,0 +1,146 @@
+---
+
+interface Props {
+  type: 'h1' | 'h2' | 'h3' | 'h4' | 'base' | 'lg' | 'regular' | 'sm' | 'xs' | 'subtitle'
+  class?: string,
+  style?: {}
+}
+
+const { type = 'base', class: className, style = {}, ...props } = Astro.props
+
+---
+
+{type === 'h1' && (
+  <h1
+    class:list={[
+      "font-display font-[700] text-[64px] tracking-tight max-md:text-[2rem] [&>span]:text-accent", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </h1>
+)}
+{type === 'h2' && (
+  <h2
+    class:list={[
+      "font-display font-[700] text-[48px] leading-[120%] tracking-tight max-md:text-[2rem] [&>span]:text-accent", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </h2>
+)}
+{type === 'h3' && (
+  <h3
+    class:list={[
+      "text-[32px] font-[700] tracking-tight leading-[110%] font-display max-md:text-2xl tracking-[-1.6px] [&>span]:text-accent", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </h3>
+)}
+{type === 'h4' && (
+  <h2
+    class:list={[
+      "text-[28px] font-[700] tracking-tight leading-[110%] font-display max-md:text-2xl tracking-[-1.6px] [&>span]:text-accent", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </h2>
+)}
+
+{type === 'lg' && (
+  <div
+    class:list={[
+      "text-[24px] font-[400] tracking-[-1.2px]", 
+      className
+    ]}
+    class="max-md:text-lg"
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+)}
+{type === 'base' && (
+  <div
+    class:list={[
+      "text-[22px] max-md:text-[14px] font-[400]", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </div>
+)}
+{
+  type === 'regular' && (
+  <div
+    class:list={[
+      "text-lg max-md:text-base", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+  )
+}
+
+{type === 'sm' && (
+  <div
+    class:list={[
+      "text-[20px] max-md:text-[16px] font-[400] leading-[120%] tracking-[-1px]", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+)}
+
+{type === 'xs' && (
+  <div
+    class:list={[
+      "text-[15px] font-display font-[400] max-md:text-[13px] tracking-[-0.45px]", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+)}
+
+{type === 'subtitle' && (
+    <div
+      class:list={[
+        "text-[24px] max-md:text-base font-[400] uppercase text-[rgba(35,31,32,0.70)] opacity-80",
+        className
+      ]}
+      style={{ 
+        letterSpacing: '0.1em', 
+        ...style
+      }}
+      {...props}
+    >
+      <slot />
+    </div>
+)}

@@ -1,0 +1,86 @@
+---
+import Button from "../system/Button.astro";
+import Text from "../system/Text.astro";
+import locationIcon from '../../icons/LocationPrimary.svg'
+import { Image } from "astro:assets";
+const { image=[], class: className, name, desc, link,ctaText,path,index,slideClass} = Astro.props as any
+
+console.log('image --> ', JSON.stringify(image, null, 2))
+---
+
+<div data-link={link}  class:list={['p-14 isolate max-md:w-full h-[504px] max-md:h-[380px]  max-md:mb-8 flex flex-col  max-md:p-m bg-cover bg-center overflow-hidden justify-center relative max-sm:justify-end max-sm:py-0' ,  className ]}
+>
+<div class="slide-container absolute inset-0">
+
+{image.map((item: any,i: number) => {
+  return <div
+            style={{
+                  backgroundImage: `url(${item.uri || item.slide[0].src.src})`,
+                  transition: '1s all ease-in-out',
+                  zIndex: -1
+                }}
+            data-class={slideClass}
+            class:list={['w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i == 0 ? 'opacity-1' : 'opacity-0','slide-item']}
+          >
+        </div>
+})}
+</div>
+
+  <div class="flex flex-col gap-r border-solid border-t-[8px] p-9 border-yellow w-fit bg-white max-sm:bg-opacity-[0.9] max-sm:p-[24px] relative z-40 mb-6 max-md:">
+      <div class="flex flex-row items-center gap-2">
+        <Image src={locationIcon} alt="Phone Icon" class="w-[22px] h-[22px]" />
+        <Text type="h3" class="text-neutral-dark-grey font-display font-bold text-[32px]"><span>{name}</span> Campus</Text>
+      </div>
+
+      <div class="pt-[16px]"></div>
+
+      <Text type="base" class="text-[#231F20] max-w-[34ch]">{desc}</Text>
+      <div class="pt-[32px]"></div>
+      <div>
+        <a href={`insight-${path}`}>
+          <Button>
+            {ctaText}
+          </Button>
+        </a>
+      </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  let slideContainer = Array.from(document.querySelectorAll<HTMLElement>('.slide-container'));
+  let slideshowIndex = new Array(slideContainer.length).fill(0);
+  let interval: string | number | NodeJS.Timer | undefined;
+  function moveSlides() {
+    slideContainer.forEach((item,index) => {
+      const items = Array.from(item.querySelectorAll<HTMLElement>('.slide-item'));
+      items.forEach((item, i) => {
+        if (i === slideshowIndex[index]) {
+          item.style.opacity = '1';
+          return;
+        } else {
+          item.style.opacity = '0'
+        }
+      })
+      slideshowIndex[index] = (slideshowIndex[index] + 1) % items.length;
+    })
+  }
+  const init = () => {
+    slideContainer = Array.from(document.querySelectorAll<HTMLElement>('.slide-container'));
+    slideshowIndex =  new Array(slideContainer.length).fill(0);
+    clearInterval(interval)
+    interval = setInterval(() => {
+      moveSlides()
+    }, 2000)
+  }
+  init()
+
+
+  document.addEventListener('astro:beforeload', () => init());
+
+  document.querySelectorAll('[data-link]').forEach(el => {
+    el.addEventListener('click', () => {
+      window.open(el.dataset.link, "_self"); 
+    })
+  })
+</script>

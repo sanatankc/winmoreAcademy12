@@ -1,0 +1,54 @@
+---
+import Text from "../system/Text.astro";
+import CampusCard from "./campusCard.astro";
+import slide2 from "../../img/slides/2.jpg";
+import slide3 from "../../img/slides/3.jpg";
+
+---
+
+
+<div class='bg-white p-14 max-md:p-5 flex flex-col gap-8'>
+    <div class="flex flex-col gap-3 items-center justify-center">
+      <Text type="subtitle">DIVERSE ENVIRONMENTS</Text>
+      <Text type="h2">Explore our <span class="text-[#3B8AE0]">Campuses</span></Text>
+    </div>
+  <div class="flex flex-col gap-5">
+    <CampusCard
+      image={[
+        {type: 'picture', slide: [
+        { src: slide2, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide2, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      {type: 'picture', slide: [
+        { src: slide3, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide3, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      ]}
+      name={"Whitefield"}
+      desc={"Survey No. 13/1, Bhaktharahalli, Nadavati Post, Hoskote Taluk, Bengaluru – 560067"}
+      index={0}
+      ctaText={'Apply Now'}
+      path={`hhh`}
+    >
+    </CampusCard>
+    <CampusCard
+      image={[
+        {type: 'picture', slide: [
+        { src: slide2, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide2, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      {type: 'picture', slide: [
+        { src: slide3, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide3, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      ]}
+      name={"Jakkur"}
+      desc={"Survey No. 13/1, Bhaktharahalli, Nadavati Post, Hoskote Taluk, Bengaluru – 560067"}
+      index={1}
+      class="items-end"
+      ctaText={'Apply Now'}
+      path={`hhh`}
+    >
+    </CampusCard>
+  </div>
+  </div>
