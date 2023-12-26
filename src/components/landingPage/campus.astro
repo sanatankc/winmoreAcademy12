@@ -1,8 +1,8 @@
 ---
 import Text from "../system/Text.astro";
 import CampusCard from "./campusCard.astro";
-import slide2 from "../../img/slides/2.jpg";
-import slide3 from "../../img/slides/3.jpg";
+import jakkur from "../../image/campus/jakkur.jpg";
+import whitefield from "../../image/campus/whitefield.jpg";
 
 ---
 
@@ -16,12 +16,8 @@ import slide3 from "../../img/slides/3.jpg";
     <CampusCard
       image={[
         {type: 'picture', slide: [
-        { src: slide2, media: "(min-width: 768px)", position: 'center 64%' },
-        { src: slide2, media: "(max-width: 768px)" },
-      ], position: 'center 10%'},
-      {type: 'picture', slide: [
-        { src: slide3, media: "(min-width: 768px)", position: 'center 64%' },
-        { src: slide3, media: "(max-width: 768px)" },
+        { src: whitefield, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: whitefield, media: "(max-width: 768px)" },
       ], position: 'center 10%'},
       ]}
       name={"Whitefield"}
@@ -34,12 +30,8 @@ import slide3 from "../../img/slides/3.jpg";
     <CampusCard
       image={[
         {type: 'picture', slide: [
-        { src: slide2, media: "(min-width: 768px)", position: 'center 64%' },
-        { src: slide2, media: "(max-width: 768px)" },
-      ], position: 'center 10%'},
-      {type: 'picture', slide: [
-        { src: slide3, media: "(min-width: 768px)", position: 'center 64%' },
-        { src: slide3, media: "(max-width: 768px)" },
+        { src: jakkur, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: jakkur, media: "(max-width: 768px)" },
       ], position: 'center 10%'},
       ]}
       name={"Jakkur"}

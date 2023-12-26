@@ -1,9 +1,11 @@
 ---
 import DeckCard from "./DeckCard.astro";
 import Gallery from "./GalleryWithDescription.astro";
+import GalleryWithoutDescription from "./Gallery.astro"
 const { 
   deckContainerClass, 
   cardHoverStyle,
+  description = true,
   id,
   gallery,
   deckImages=[0, 2],
@@ -30,10 +32,22 @@ const deckCardId = 'deck-' + id
   link={link}
 />
 
-<Gallery
-  id={id}
-  gallery={gallery}
-  currentLink={currentLink}
-  link={link}
-  closeLink={closeLink}
-/>
+{description && (
+  <Gallery
+    id={id}
+    gallery={gallery}
+    currentLink={currentLink}
+    link={link}
+    closeLink={closeLink}
+  />
+)}
+
+{!description && (
+  <GalleryWithoutDescription
+    id={id}
+    gallery={gallery}
+    currentLink={currentLink}
+    link={link}
+    closeLink={closeLink}
+  />
+)}

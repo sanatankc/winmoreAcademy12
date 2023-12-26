@@ -12,24 +12,20 @@ let apiResponse = {
         "LocationID": 34,
         "Pincode": "560075",
         classes: [
-           "3486",
-           "3610",
-           "314",
-           "315",
-           "316",
-           "317",
-           "318",
-           "319",
-           "320",
-           "321",
-           "322",
-           "323",
-           "324",
-           "325",
-           "326",
-           "533",
-           "534"
-      ]
+            "3486",
+            "314",
+            "315",
+            "317",
+            "318",
+            "319",
+            "320",
+            "321",
+            "322",
+            "323",
+            "324",
+            "325",
+            "326"
+       ],
     },
     {
         "BranchID": 50,
@@ -37,9 +33,9 @@ let apiResponse = {
         "LocationID": 34,
         "Pincode": "560075",
         classes: [
+           "3610",
            "314",
            "315",
-           "316",
            "317",
            "318",
            "319",
@@ -56,22 +52,22 @@ let apiResponse = {
   classes: [
     {
         "ClassID": 3486,
-        "ClassName": "Day Care",
+        "ClassName": "Play Group",
         "BoardID": 1
     },
     {
         "ClassID": 3610,
-        "ClassName": "Playgroup",
+        "ClassName": "Play Group",
         "BoardID": 1
     },
     {
         "ClassID": 314,
-        "ClassName": "Prep 1",
+        "ClassName": "LKG",
         "BoardID": 1
     },
     {
         "ClassID": 315,
-        "ClassName": "Prep 2",
+        "ClassName": "LKG",
         "BoardID": 1
     },
     {
@@ -81,72 +77,72 @@ let apiResponse = {
     },
     {
         "ClassID": 317,
-        "ClassName": "Class 1",
+        "ClassName": "Grade 1",
         "BoardID": 1
     },
     {
         "ClassID": 318,
-        "ClassName": "Class 2",
+        "ClassName": "Grade 2",
         "BoardID": 1
     },
     {
         "ClassID": 319,
-        "ClassName": "Class 3",
+        "ClassName": "Grade 3",
         "BoardID": 1
     },
     {
         "ClassID": 320,
-        "ClassName": "Class 4",
+        "ClassName": "Grade 4",
         "BoardID": 1
     },
     {
         "ClassID": 321,
-        "ClassName": "Class 5",
+        "ClassName": "Grade 5",
         "BoardID": 1
     },
     {
         "ClassID": 322,
-        "ClassName": "Class 6",
+        "ClassName": "Grade 6",
         "BoardID": 1
     },
     {
         "ClassID": 323,
-        "ClassName": "Class 7",
+        "ClassName": "Grade 7",
         "BoardID": 1
     },
     {
         "ClassID": 324,
-        "ClassName": "Class 8",
+        "ClassName": "Grade 8",
         "BoardID": 1
     },
     {
         "ClassID": 325,
-        "ClassName": "Class 9",
+        "ClassName": "Grade 9",
         "BoardID": 1
     },
     {
         "ClassID": 326,
-        "ClassName": "Class 10",
+        "ClassName": "Grade 10",
         "BoardID": 1
     },
     {
         "ClassID": 375,
-        "ClassName": "Class 11-PCMC",
+        "ClassName": "Grade 11-PCMC",
         "BoardID": 1
     },
     {
         "ClassID": 499,
-        "ClassName": "Class 11-PCMB",
+        "ClassName": "Grade 11-PCMB",
         "BoardID": 1
     },
     {
         "ClassID": 533,
-        "ClassName": "Class 11",
+        "ClassName": "Grade 11",
         "BoardID": 1
     },
     {
         "ClassID": 534,
-        "ClassName": "Class 12",
+        "ClassName": "Grade 12",
         "BoardID": 1
     },
     {
@@ -260,98 +256,83 @@ export const academicYears = [
 
 export const classes  = [
     {
-        "ClassID": 3486,
-        "ClassName": "Day Care",
-        "BoardID": 1
-    },
-    {
-        "ClassID": 3610,
-        "ClassName": "Playgroup",
-        "BoardID": 1
-    },
-    {
         "ClassID": 314,
-        "ClassName": "Prep 1",
+        "ClassName": "Pre Primary",
         "BoardID": 1
     },
     {
         "ClassID": 315,
-        "ClassName": "Prep 2",
-        "BoardID": 1
-    },
-    {
-        "ClassID": 316,
-        "ClassName": "Prep 3",
+        "ClassName": "Primary",
         "BoardID": 1
     },
     {
         "ClassID": 317,
-        "ClassName": "Class 1",
+        "ClassName": "Grade 1",
         "BoardID": 1
     },
     {
         "ClassID": 318,
-        "ClassName": "Class 2",
+        "ClassName": "Grade 2",
         "BoardID": 1
     },
     {
         "ClassID": 319,
-        "ClassName": "Class 3",
+        "ClassName": "Grade 3",
         "BoardID": 1
     },
     {
         "ClassID": 320,
-        "ClassName": "Class 4",
+        "ClassName": "Grade 4",
         "BoardID": 1
     },
     {
         "ClassID": 321,
-        "ClassName": "Class 5",
+        "ClassName": "Grade 5",
         "BoardID": 1
     },
     {
         "ClassID": 322,
-        "ClassName": "Class 6",
+        "ClassName": "Grade 6",
         "BoardID": 1
     },
     {
         "ClassID": 323,
-        "ClassName": "Class 7",
+        "ClassName": "Grade 7",
         "BoardID": 1
     },
     {
         "ClassID": 324,
-        "ClassName": "Class 8",
+        "ClassName": "Grade 8",
         "BoardID": 1
     },
     {
         "ClassID": 325,
-        "ClassName": "Class 9",
+        "ClassName": "Grade 9",
         "BoardID": 1
     },
     {
         "ClassID": 326,
-        "ClassName": "Class 10",
+        "ClassName": "Grade 10",
         "BoardID": 1
     },
     {
         "ClassID": 375,
-        "ClassName": "Class 11-PCMC",
+        "ClassName": "Grade 11-PCMC",
         "BoardID": 1
     },
     {
         "ClassID": 499,
-        "ClassName": "Class 11-PCMB",
+        "ClassName": "Grade 11-PCMB",
         "BoardID": 1
     },
     {
         "ClassID": 533,
-        "ClassName": "Class 11",
+        "ClassName": "Grade 11",
         "BoardID": 1
     },
     {
         "ClassID": 534,
-        "ClassName": "Class 12",
+        "ClassName": "Grade 12",
         "BoardID": 1
     },
     {

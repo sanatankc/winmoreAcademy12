@@ -8,7 +8,7 @@ const { image=[], class: className, name, desc, link,ctaText,path,index,slideCla
 console.log('image --> ', JSON.stringify(image, null, 2))
 ---
 
-<div data-link={link}  class:list={['p-14 isolate max-md:w-full h-[504px] max-md:h-[380px]  max-md:mb-8 flex flex-col  max-md:p-m bg-cover bg-center overflow-hidden justify-center relative max-sm:justify-end max-sm:py-0' ,  className ]}
+<div data-link={link}  class:list={['p-14 max-md:px-6 isolate max-md:w-full h-[504px] max-md:h-[380px]  max-md:mb-8 flex flex-col  max-md:p-m bg-cover bg-center overflow-hidden justify-center relative max-sm:justify-end max-sm:py-0' ,  className ]}
 >
 <div class="slide-container absolute inset-0">
 
@@ -37,7 +37,7 @@ console.log('image --> ', JSON.stringify(image, null, 2))
       <Text type="base" class="text-[#231F20] max-w-[34ch]">{desc}</Text>
       <div class="pt-[32px]"></div>
       <div>
-        <a href={`insight-${path}`}>
+        <a data-scroll-top>
           <Button>
             {ctaText}
           </Button>
@@ -81,6 +81,12 @@ console.log('image --> ', JSON.stringify(image, null, 2))
   document.querySelectorAll('[data-link]').forEach(el => {
     el.addEventListener('click', () => {
       window.open(el.dataset.link, "_self"); 
+    })
+  })
+
+  document.querySelectorAll('[data-scroll-top]').forEach(el => {
+    el.addEventListener('click', () => {
+      window.scrollTo({top: 0, behavior: 'smooth'})
     })
   })
 </script>
