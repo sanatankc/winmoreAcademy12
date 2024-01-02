@@ -52,12 +52,12 @@ let apiResponse = {
   classes: [
     {
         "ClassID": 3486,
-        "ClassName": "Play Group",
+        "ClassName": "Play School",
         "BoardID": 1
     },
     {
         "ClassID": 3610,
-        "ClassName": "Play Group",
+        "ClassName": "Play School",
         "BoardID": 1
     },
     {
@@ -67,7 +67,7 @@ let apiResponse = {
     },
     {
         "ClassID": 315,
-        "ClassName": "LKG",
+        "ClassName": "UKG",
         "BoardID": 1
     },
     {
