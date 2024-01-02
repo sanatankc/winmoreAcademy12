@@ -3,7 +3,7 @@ import Button from "../system/Button.astro";
 import Text from "../system/Text.astro";
 import locationIcon from '../../icons/LocationPrimary.svg'
 import { Image } from "astro:assets";
-const { image=[], class: className, name, desc, link,ctaText,path,index,slideClass} = Astro.props as any
+const { image=[], class: className, name, desc, link,ctaText,path,index,slideClass,ctaLink} = Astro.props as any
 
 console.log('image --> ', JSON.stringify(image, null, 2))
 ---
@@ -37,7 +37,7 @@ console.log('image --> ', JSON.stringify(image, null, 2))
       <Text type="base" class="text-[#231F20] max-w-[34ch]">{desc}</Text>
       <div class="pt-[32px]"></div>
       <div>
-        <a data-scroll-top>
+        <a href={ctaLink}>
           <Button>
             {ctaText}
           </Button>
