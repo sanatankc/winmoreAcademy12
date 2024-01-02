@@ -176,10 +176,13 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
 <script>
   import tippy from 'tippy.js';
 
+  
+  
   const campuses = {
     whitefield: 'Whitefield',
     jakkur: 'Jakkur',
   }
+  
 
   let loading = false
   
@@ -287,6 +290,16 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
         document.getElementById('register-form-container-desktop').classList.add('form-completed')
       }
     })
+
+    let params = (new URL(document.location)).searchParams;
+
+    const campusName = params.get('campus') || '';
+    const selectedCampus = campuses[campusName] || null
+
+
+    if (!!selectedCampus) {
+      updateGradesOptions(selectedCampus)
+    }
 
 
     tippy(`[data-select-parent-id="selectDisabled"]`, {
