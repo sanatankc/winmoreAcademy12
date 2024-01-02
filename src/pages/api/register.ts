@@ -1,16 +1,15 @@
 import type { APIRoute } from "astro";
 import postMCB from "./adapters/mcb/post";
 
-
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
-  const studentName = data.get("studentName");
-  const parentName = data.get("parentName");
-  const phone = data.get("phone");
-  const email = data.get("email");
-  const campus = data.get("campus");
-  const grade = data.get("grade");
-  const whatsappConsent = data.get("whatsappConsent");
+  const studentName = data.get("studentName") as string;
+  const parentName = data.get("parentName") as string;
+  const phone = data.get("phone") as string;
+  const email = data.get("email") as string;
+  const campus = data.get("campus") as string;
+  const grade = data.get("grade") as string;
+  const whatsappConsent = data.get("whatsappConsent") as string;
   const formData = new FormData();
   formData.append("Student Name", studentName);
   formData.append("Parent Name", parentName);
@@ -36,18 +35,6 @@ export const POST: APIRoute = async ({ request }) => {
   const utm_campaign = data.get("utm_campaign") || null;
   const QueryContactSourceID = sources[utmSource] || null;
 
-
-// await postMCB({
-//   studentName,
-//   parentName,
-//   phone,
-//   email,
-//   campus,
-//   grade,
-//   QueryContactSourceID,
-//   utm_campaign
-// })
-
   try {
     const response = await fetch('https://script.google.com/macros/s/AKfycbz3c0TfOjZtKOB4hSSLR2Iv7S4nbkIcpWk2y8DRs_Ff4vRcoiqE-9Ub8KpcAyKZBXJP/exec', {
       method: 'POST',
@@ -61,15 +48,9 @@ export const POST: APIRoute = async ({ request }) => {
 
 
   // Validate the data - you'll probably want to do more than this
-  // if (!name || !email || !message) {
-  //   return new Response(
-  //     JSON.stringify({
-  //       message: "Missing required fields",
-  //     }),
-  //     { status: 400 }
-  //   );
-  // }
-  // // Do something with the data, then return a success response
+
+  // Do something with the data, then return a success response
+
   return new Response(
     JSON.stringify({
       message: "Success!"
